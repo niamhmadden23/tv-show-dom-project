@@ -2,14 +2,19 @@
   color: white;
   padding: 20px 40px;
 }
-
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
 body {
   background-color: rgb(31, 29, 29);
 }
 header {
   padding: 50px;
-  border-bottom: solid 1px white;
+  border-bottom: solid 2px rgb(129, 16, 139);
 }
+
 h4 {
   opacity: 75%;
 }

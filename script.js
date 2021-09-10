@@ -5,6 +5,32 @@
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);
+  const searchBar = document.getElementById("search");
+
+  searchBar.addEventListener("keyup", (e) => {
+    const searchEpisodes = e.target.value.toLowerCase();
+    const eachCard = document.getElementsByClassName("each-episode");
+
+    const filterEpisodes = allEpisodes.filter((episode) => {
+      return (
+        episode.name.toLowerCase().includes(searchEpisodes) ||
+        episode.summary.toLowerCase().includes(searchEpisodes)
+      );
+    });
+
+    Array.from(eachCard).forEach((e) => {
+      const title = e.children[1].textContent;
+      const episodeSummary = e.children[3].textContent;
+      if (
+        title.toLowerCase().indexOf(searchEpisodes) != -1 ||
+        episodeSummary.toLowerCase().indexOf(searchEpisodes) != -1
+      ) {
+        e.style.display = "block";
+      } else {
+        e.style.display = "none";
+      }
+    });
+  });
 }
 
 function makePageForEpisodes(episodeList) {
@@ -31,7 +57,7 @@ function makePageForEpisodes(episodeList) {
     const episodeImage = document.createElement("img");
     episodeImage.src = episode.image.medium;
 
-    // episode code with season and number
+    // episode code with season and number combined
 
     const epSeasonAndNum = document.createElement("h4");
     let season = episode.season.toString().padStart(2, 0);
