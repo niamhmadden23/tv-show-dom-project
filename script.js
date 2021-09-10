@@ -16,7 +16,7 @@ function makePageForEpisodes(episodeList) {
   episodeList.forEach((episode) => {
     const episodeContainer = document.querySelector(".episode-content");
     const createCard = document.createElement("div");
-    createCard.setAttribute("class", "episodeCard");
+    createCard.setAttribute("class", "each-episode");
     createCard.setAttribute("id", `${episode.id}`);
 
     //episode name
