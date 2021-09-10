@@ -1,3 +1,10 @@
 #root {
-  color: red;
+  color: white;
+}
+body {
+  background-color: rgb(31, 29, 29);
+}
+
+.episode-content {
+  color: white;
 }
