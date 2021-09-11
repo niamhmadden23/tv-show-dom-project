@@ -19,8 +19,8 @@ function setup() {
     });
 
     Array.from(eachCard).forEach((e) => {
-      const title = e.children[1].textContent;
-      const episodeSummary = e.children[3].textContent;
+      const title = e.textContent;
+      const episodeSummary = e.textContent;
       if (
         title.toLowerCase().indexOf(searchEpisodes) != -1 ||
         episodeSummary.toLowerCase().indexOf(searchEpisodes) != -1
