@@ -40,9 +40,9 @@ function makePageForEpisodes(episodeList) {
   rootElem.textContent = `Got ${episodeList.length} episode(s)`;
 
   // Adding episodes to page
-
+  const episodeContainer = document.querySelector(".episode-content");
+  episodeContainer.innerHTML = "";
   episodeList.forEach((episode) => {
-    const episodeContainer = document.querySelector(".episode-content");
     const createCard = document.createElement("div");
     createCard.setAttribute("class", "each-episode");
     createCard.setAttribute("id", `${episode.id}`);
@@ -66,7 +66,6 @@ function makePageForEpisodes(episodeList) {
     epSeasonAndNum.innerText = `S${season}E${episodeNum}`;
 
     //Appending to div
-    rootElem.appendChild(createCard);
     createCard.appendChild(createEpName);
     createCard.appendChild(epSeasonAndNum);
     createCard.appendChild(episodeImage);
